@@ -255,7 +255,7 @@
   }
   function validarCodigo(c){
     if (window.MOCK) return Promise.resolve(window.MOCK.validarCodigo(c));
-    return fetch(API_URL + '?acao=codigo&c=' + encodeURIComponent(c)).then(function(r){ return r.json(); }).then(function(d){ return !!d.ok; });
+    return fetch(API_URL + '?acao=codigo&cod=' + encodeURIComponent(c)).then(function(r){ return r.json(); }).then(function(d){ return !!d.ok; });
   }
   var KEY = 'quizNeuro_prog', DONE = 'quizNeuro_feito', idx = 0, deadline = 0, tick = null, enviando = false;
   function salvarProg(){ try { localStorage.setItem(KEY, JSON.stringify({aluno:aluno, respostas:respostas, idx:idx, deadline:deadline, motivo:motivoSaida})); } catch(e){} }
